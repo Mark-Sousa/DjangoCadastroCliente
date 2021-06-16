@@ -1,0 +1,28 @@
+{% extends 'clientes/base.html' %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">Dados Do Cliente</div>
+        <div class="card-body">
+           <h3 class="card-title">Nome:{{cliente.nome}}</h3>
+           <h3 class="card-title">Data de nascimento:{{cliente.data_nascimento}}</h3>
+           <h3 class="card-title">E-mail:{{cliente.email}}</h3>
+           <h3 class="card-title">Profissão:{{cliente.profissao}}</h3>
+           <h3 class="card-title">Sexo:{{cliente.sexo}}</h3>
+        </div>
+        <!--endereco -->
+        <div class="card-header">Endereço do Cliente</div>
+        <div class="card-body">
+            <h3 class="card-title">Rua:{{cliente.rua}}</h3>
+            <h3 class="card-title">Numero:{{cliente.numero}}</h3>
+            <h3 class="card-title">Complemento:{{cliente.complemento}}</h3>
+            <h3 class="card-title">Bairro:{{cliente.bairro}}</h3>
+            <h3 class="card-title">Cidade:{{cliente.cidade}}</h3>
+            <h3 class="card-title">Pais:{{cliente.pais}}</h3>
+        </div>
+
+    </div>
+    <a href="" class="btn btn-primary">Voltar</a>
+
+{% endblock content %}

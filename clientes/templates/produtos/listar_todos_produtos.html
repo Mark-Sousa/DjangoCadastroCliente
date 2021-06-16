@@ -1,0 +1,32 @@
+{% extends 'clientes/base.html' %}
+{% load meus_filtros %}
+{% block title %}
+    meus produtos
+{% endblock title %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+                <tr>
+                    <td><a href="#">{{produto.nome}}</a></td>
+                    <td>{{produto.descricao}}</td>
+                    <td>{{produto.valor}}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                        <a href="{% url 'url_remover_produto' produto.id %}"  class="btn btn-danger">remover</a>
+                    </td>
+                </tr>
+            {% endfor  %}
+
+        </tbody>
+
+    </table>
+    <a href="{% url 'url_cadastrar_produto' %}" class="btn btn-primary">Cadastrar</a>
+
+{% endblock content %}

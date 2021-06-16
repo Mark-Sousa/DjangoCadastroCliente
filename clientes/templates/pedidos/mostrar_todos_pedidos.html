@@ -1,0 +1,31 @@
+{% extends 'clientes/base.html' %}
+
+{% block content %}
+
+<table class="table">
+        <thead>
+            <th>Cliente</th>
+            <th>Data do Pedido</th>
+            <th>Status</th>
+            <th>Ações</th>
+
+        </thead>
+        <tbody>
+            {% for pedido in pedidos %}
+                <tr>
+                    <td><a href="{% url 'url_mostrar_pedido_id' pedido.id %}">{{pedido.cliente}}</a></td>
+                    <td>{{pedido.data_pedido}}</td>
+                    <td>{{pedido.status}}</td>
+                    <td>
+                        <a href="{% url 'url_editar_pedido' pedido.id %}" class="btn btn-primary">Editar</a>
+                        <a href="{% url 'url_remover_pedido' pedido.id %}"  class="btn btn-danger">remover</a>
+                    </td>
+                </tr>
+            {% endfor  %}
+
+        </tbody>
+
+    </table>
+    <a href="{% url 'url_inserir_pedido' %}" class="btn btn-primary">Cadastrar Pedido</a>
+
+{% endblock content %}

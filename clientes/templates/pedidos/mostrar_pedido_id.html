@@ -1,0 +1,25 @@
+{% extends 'clientes/base.html' %}
+
+{% block content %}
+
+    <div class="card">
+        <h4 class="card-header">Dados Do Pedido</h4>
+        <div class="card-body">
+           <h3 class="card-title">Nome do Cliente:{{pedido.cliente}}</h3>
+           <h3 class="card-title">Data do Pedido:{{pedido.data_pedido}}</h3>
+           <h3 class="card-title">Valor:{{pedido.valor}}</h3>
+           <h3 class="card-title">Status:{{pedido.status}}</h3>
+           <h3 class="card-title">observações:{{pedido.observacoes}}</h3>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h4 class="card-header">Produtos Do Pedido</h4>
+        {% for i in pedido.produto.all %}
+                <h3 class="card-title">{{i.nome}}</h3>
+            {% endfor %}
+    </div>
+
+    <a href="#" class="btn btn-primary">Voltar</a>
+
+{% endblock content %}
